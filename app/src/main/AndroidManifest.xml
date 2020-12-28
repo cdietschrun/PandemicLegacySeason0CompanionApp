@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PandemicLegacySeason0CompanionApp">
-        <activity android:name=".DisplayMessageActivity"
+        <activity android:name=".DisplayRegionActivity"
                   android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
