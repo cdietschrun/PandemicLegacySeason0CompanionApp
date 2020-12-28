@@ -3,10 +3,17 @@ package cdietschrun.pandemiclegacyseason0companionapp;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 import java.util.Map;
@@ -84,10 +91,13 @@ public class DisplayRegionActivity extends AppCompatActivity {
         // get the intent that started this activity and extract the string
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        List<String> cities = regionToCities.get(message);
 
-        // capture the layout's textview and set the string as its text
-        TextView textView = findViewById(R.id.textView);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                this, android.R.layout.simple_list_item_1,
+                cities.stream().toArray(String[]::new));
 
-        textView.setText(regionToCities.get(message).toString());
+        ListView listView = findViewById(R.id.regionListView);
+        listView.setAdapter(adapter);
     }
 }
