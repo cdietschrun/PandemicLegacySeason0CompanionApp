@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">PandemicLegacySeason0CompanionApp</string>
-    <string name="edit_message">Enter a message</string>
+    <string name="region_message">Enter a region</string>
     <string name="button_send">Send</string>
+    <string-array name="regionsArray">
+        <item>North America</item>
+        <item>South America</item>
+        <item>Europe</item>
+        <item>Africa</item>
+        <item>Asia</item>
+        <item>Pacific Rim</item>
+    </string-array>
 </resources>
