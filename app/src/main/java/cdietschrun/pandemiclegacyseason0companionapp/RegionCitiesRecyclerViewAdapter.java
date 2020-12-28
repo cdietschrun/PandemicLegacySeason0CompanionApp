@@ -42,7 +42,7 @@ public class RegionCitiesRecyclerViewAdapter extends RecyclerView.Adapter<Region
     {
         //        personViewHolder.personName.setText(persons.get(i).name);
 
-        List<String> cities = DisplayRegionActivity.regionToCities.get(regions.get(index));
+        List<String> cities = RegionCities.regionToCities.get(regions.get(index));
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(regionCitiesViewHolder.cv.getContext(),
                 android.R.layout.simple_list_item_1, cities.stream().toArray(String[]::new));
