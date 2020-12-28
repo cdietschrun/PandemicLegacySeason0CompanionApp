@@ -19,9 +19,10 @@ import java.util.List;
 import java.util.Map;
 
 //@RequiresApi(api = Build.VERSION_CODES.R)
-public class DisplayRegionActivity extends AppCompatActivity {
-
-    List<String> europeCities = List.of("East Berlin",
+@RequiresApi(api = Build.VERSION_CODES.R)
+public class DisplayRegionActivity extends AppCompatActivity
+{
+    public static List<String> europeCities = List.of("East Berlin",
                                         "Istanbul",
                                         "Kiev",
                                         "Leningrad",
@@ -33,7 +34,7 @@ public class DisplayRegionActivity extends AppCompatActivity {
                                         "Rome",
                                         "Warsaw");
 
-    List<String> northAmericaCities = List.of("Atlanta",
+    public static List<String> northAmericaCities = List.of("Atlanta",
                                               "Havana",
                                               "Los Angeles",
                                               "Mexico City",
@@ -42,20 +43,20 @@ public class DisplayRegionActivity extends AppCompatActivity {
                                               "Toronto",
                                               "Washington");
 
-    List<String> southAmericaCities = List.of("Bogata",
+    public static List<String> southAmericaCities = List.of("Bogata",
                                               "Buenos Aires",
                                               "Lima",
                                               "Santiago",
                                               "São Paulo");
 
-    List<String> africaCities = List.of("Algiers",
+    public static List<String> africaCities = List.of("Algiers",
                                         "Cairo",
                                         "Johannesburg",
                                         "Khartoum",
                                         "Lagos",
                                         "Leopoldville");
 
-    List<String> asiaCities = List.of("Baghdad",
+    public static List<String> asiaCities = List.of("Baghdad",
                                       "Bangkok",
                                       "Bombay",
                                       "Calcutta",
@@ -69,13 +70,13 @@ public class DisplayRegionActivity extends AppCompatActivity {
                                       "Saigon",
                                       "Shanghai");
 
-    List<String> pacificRimCities = List.of("Jakarta",
+    public static List<String> pacificRimCities = List.of("Jakarta",
                                             "Manila",
                                             "Osaka",
                                             "Sydney",
                                             "Tokyo");
 
-    Map<String, List<String>> regionToCities = Map.of(
+    static Map<String, List<String>> regionToCities = Map.of(
             "North America", northAmericaCities,
             "South America", southAmericaCities,
             "Europe", europeCities,

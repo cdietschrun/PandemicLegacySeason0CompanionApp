@@ -24,7 +24,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
 {
     public static final String EXTRA_MESSAGE = "cdietschrun.companionApp.MESSAGE";
-    private List<Person> people;
+    private List<String> regions;
     private RecyclerView recyclerView;
     private RVAdapter mAdapter;
 
@@ -59,12 +59,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void initializeData(){
-        people = new ArrayList<>();
+        regions = new ArrayList<String>();
 //        people.add(new Person("Emma Wilson"));
     }
 
     private void initializeAdapter(){
-        mAdapter = new RVAdapter(people);
+        mAdapter = new RVAdapter(regions);
         recyclerView.setAdapter(mAdapter);
     }
 
@@ -87,7 +87,8 @@ public class MainActivity extends AppCompatActivity
                         Snackbar.make(view, "Here's a Snackbar3: " + some_array[which], Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
 
-                        people.add(new Person("fucku"));
+//                        people.add(new Person("fucku"));
+                        regions.add(some_array[which]);
 //                        regions.add(some_array[which]);
                         updateUI();
 //                        List<String> cities = DisplayRegionActivity.regionToCities.get(some_array[which]);
