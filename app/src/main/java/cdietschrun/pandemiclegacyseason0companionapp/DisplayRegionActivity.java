@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import java.util.Map;
 
-@RequiresApi(api = Build.VERSION_CODES.R)
+//@RequiresApi(api = Build.VERSION_CODES.R)
 public class DisplayRegionActivity extends AppCompatActivity {
 
     List<String> europeCities = List.of("East Berlin",
@@ -83,21 +83,21 @@ public class DisplayRegionActivity extends AppCompatActivity {
             "Asia", asiaCities,
             "Pacific Rim", pacificRimCities);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_region);
-
-        // get the intent that started this activity and extract the string
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        List<String> cities = regionToCities.get(message);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                this, android.R.layout.simple_list_item_1,
-                cities.stream().toArray(String[]::new));
-
-        ListView listView = findViewById(R.id.regionListView);
-        listView.setAdapter(adapter);
-    }
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_display_region);
+//
+//        // get the intent that started this activity and extract the string
+//        Intent intent = getIntent();
+//        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+//        List<String> cities = regionToCities.get(message);
+//
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+//                this, android.R.layout.simple_list_item_1,
+//                cities.stream().toArray(String[]::new));
+//
+//        ListView listView = findViewById(R.id.regionListView);
+//        listView.setAdapter(adapter);
+//    }
 }
