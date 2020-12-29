@@ -32,7 +32,7 @@ public class RegionCitiesRecyclerViewAdapter extends RecyclerView.Adapter<Region
     public RegionCitiesViewHolder onCreateViewHolder(ViewGroup viewGroup, int index)
     {
         View view = LayoutInflater.from(viewGroup.getContext())
-                               .inflate(R.layout.item, viewGroup, false);
+                               .inflate(R.layout.unknown_city_card, viewGroup, false);
         return new RegionCitiesViewHolder(view);
     }
 
