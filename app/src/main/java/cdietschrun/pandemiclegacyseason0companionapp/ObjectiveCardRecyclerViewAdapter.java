@@ -25,7 +25,7 @@ public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<Objec
     public ObjectiveCardViewHolder onCreateViewHolder(ViewGroup viewGroup, int index)
     {
         View view = LayoutInflater.from(viewGroup.getContext())
-                                  .inflate(R.layout.objective_card, viewGroup, false);
+                                  .inflate(R.layout.pls0_objective_card, viewGroup, false);
         return new ObjectiveCardViewHolder(view);
     }
 
