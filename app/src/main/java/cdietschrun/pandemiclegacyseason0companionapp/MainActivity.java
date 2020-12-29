@@ -18,9 +18,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
-    private List<String> regions = new ArrayList<String>();
+    private List<String> objectives = new ArrayList<String>();
     private RecyclerView recyclerView;
-    private RegionCitiesRecyclerViewAdapter adapter;
+    private ObjectiveCardRecyclerViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,8 +31,11 @@ public class MainActivity extends AppCompatActivity
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new RegionCitiesRecyclerViewAdapter(regions);
+        adapter = new ObjectiveCardRecyclerViewAdapter(objectives);
         recyclerView.setAdapter(adapter);
+        int largePadding = getResources().getDimensionPixelSize(R.dimen.objective_view_grid_spacing);
+        int smallPadding = getResources().getDimensionPixelSize(R.dimen.objective_view_grid_spacing_small);
+        recyclerView.addItemDecoration(new ObjectiveRecyclerViewItemDecoration(largePadding, smallPadding));
     }
 
     public void fabClick(View view)
@@ -50,7 +53,7 @@ public class MainActivity extends AppCompatActivity
                                .setAction("Action", null)
                                .show();
 
-                       regions.add(regionsArray[position]);
+                       objectives.add(regionsArray[position]);
                        updateUI();
                    }
                });
