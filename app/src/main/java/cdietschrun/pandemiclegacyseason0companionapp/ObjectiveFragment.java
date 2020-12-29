@@ -22,7 +22,7 @@ import java.util.List;
 
 public class ObjectiveFragment extends Fragment
 {
-    private List<String> objectives = new ArrayList<String>();
+    private List<String> objectives = new ArrayList<>();
     private ObjectiveCardRecyclerViewAdapter adapter;
 
     @Override
@@ -40,32 +40,24 @@ public class ObjectiveFragment extends Fragment
         recyclerView.addItemDecoration(new ObjectiveRecyclerViewItemDecoration(largePadding, smallPadding));
 
         FloatingActionButton fab = view.findViewById(R.id.fabAddObjective);
-        fab.setOnClickListener(new View.OnClickListener()
+        fab.setOnClickListener(clickedView ->
         {
-            @Override
-            public void onClick(View view)
-            {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
-                builder.setTitle(R.string.region_fab)
-                       .setItems(R.array.regionsArray, new DialogInterface.OnClickListener()
-                       {
-                           @RequiresApi(api = Build.VERSION_CODES.N)
-                           public void onClick(DialogInterface dialog, int position)
-                           {
-                               String[] regionsArray = getResources().getStringArray(R.array.regionsArray);
-                               Snackbar.make(view, regionsArray[position] + " chosen", Snackbar.LENGTH_LONG)
-                                       .setAction("Action", null)
-                                       .show();
+            builder.setTitle(R.string.add_objective_fab)
+                   .setItems(R.array.regionsArray, (dialog, position) ->
+                   {
+                       String[] regionsArray = getResources().getStringArray(R.array.regionsArray);
+                       Snackbar.make(clickedView, regionsArray[position] + " chosen", Snackbar.LENGTH_LONG)
+                               .setAction("Action", null)
+                               .show();
 
-                               objectives.add(regionsArray[position]);
-                               adapter.notifyDataSetChanged();
-                           }
-                       });
+                       objectives.add(regionsArray[position]);
+                       adapter.notifyDataSetChanged();
+                   });
 
-                AlertDialog dialog = builder.create();
-                dialog.show();
-            }
+            AlertDialog dialog = builder.create();
+            dialog.show();
         });
 
         return view;

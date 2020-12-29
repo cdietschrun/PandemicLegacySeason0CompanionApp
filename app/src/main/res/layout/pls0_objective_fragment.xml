@@ -11,10 +11,9 @@
         android:id="@+id/fabAddObjective"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
+        android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:contentDescription="@string/region_fab"
-        android:onClick="fabClick"
+        android:contentDescription="@string/add_objective_fab"
         app:srcCompat="@android:drawable/ic_input_add"/>
 
     <androidx.recyclerview.widget.RecyclerView

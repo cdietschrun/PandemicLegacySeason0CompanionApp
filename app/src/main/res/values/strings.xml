@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">PandemicLegacySeason0CompanionApp</string>
-    <string name="region_fab">Track an object</string>
+    <string name="add_objective_fab">Track an objective</string>
     <string-array name="regionsArray">
         <item>North America</item>
         <item>South America</item>
