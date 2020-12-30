@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/objective_menu_dest"
+        android:icon="@drawable/ic_home"
+        android:title="@string/objective_trackers" />
+<!--    <item-->
+<!--        android:id="@id/deeplink_dest"-->
+<!--        android:icon="@drawable/ic_android"-->
+<!--        android:title="@string/deeplink" />-->
+</menu>

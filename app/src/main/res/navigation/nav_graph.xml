@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/objectiveMenuFragment">
+    app:startDestination="@id/objective_menu_dest">
 
     <fragment
-        android:id="@+id/objectiveMenuFragment"
+        android:id="@+id/objective_menu_dest"
         android:name="cdietschrun.pandemiclegacyseason0companionapp.fragments.ObjectiveMenuFragment"
-        android:label="pls0_objective_menu_fragment"
+        android:label="@string/objective_trackers"
         tools:layout="@layout/pls0_objective_menu_fragment" >
         <action
             android:id="@+id/regionSelectedAction"
@@ -18,10 +18,11 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+
     <fragment
         android:id="@+id/objectiveDetailFragment"
         android:name="cdietschrun.pandemiclegacyseason0companionapp.fragments.ObjectiveDetailFragment"
-        android:label="pls0_objective_detail_fragment"
+        android:label="@string/objective_detail"
         tools:layout="@layout/pls0_objective_detail_fragment" >
         <argument
             android:name="objectiveRegionName"

@@ -1,4 +1,9 @@
 <resources>
+
+    <!-- menu strings -->
+    <string name="objective_trackers">Objective Trackers</string>
+    <string name="objective_detail">Objective Details</string>
+
     <string name="app_name">PandemicLegacySeason0CompanionApp</string>
     <string name="add_objective_fab">Track an objective</string>
     <string-array name="regionsArray">
