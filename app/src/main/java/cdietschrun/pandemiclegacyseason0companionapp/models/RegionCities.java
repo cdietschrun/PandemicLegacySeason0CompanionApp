@@ -1,4 +1,4 @@
-package cdietschrun.pandemiclegacyseason0companionapp;
+package cdietschrun.pandemiclegacyseason0companionapp.models;
 
 import android.os.Build;
 

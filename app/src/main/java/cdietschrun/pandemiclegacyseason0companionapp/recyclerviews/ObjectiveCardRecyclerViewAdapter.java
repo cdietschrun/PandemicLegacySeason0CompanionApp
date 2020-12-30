@@ -1,4 +1,4 @@
-package cdietschrun.pandemiclegacyseason0companionapp;
+package cdietschrun.pandemiclegacyseason0companionapp.recyclerviews;
 
 import android.os.Build;
 import android.view.LayoutInflater;
@@ -15,12 +15,15 @@ import com.google.android.material.button.MaterialButton;
 
 import java.util.List;
 
+import cdietschrun.pandemiclegacyseason0companionapp.R;
+import cdietschrun.pandemiclegacyseason0companionapp.fragments.ObjectiveDetailFragment;
+
 public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<ObjectiveCardRecyclerViewAdapter.ObjectiveCardViewHolder>
 {
     private FragmentActivity activity;
     private List<String> objectives;
 
-    ObjectiveCardRecyclerViewAdapter(List<String> objectives, FragmentActivity activity)
+    public ObjectiveCardRecyclerViewAdapter(List<String> objectives, FragmentActivity activity)
     {
         this.objectives = objectives;
         this.activity = activity;
@@ -49,7 +52,6 @@ public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<Objec
             {
                 ObjectiveDetailFragment objectiveDetailFragment = new ObjectiveDetailFragment();
                 objectiveDetailFragment.setRegion(objectiveRegion);
-//                ((NavigationHost) activity).navigateTo(objectiveDetailFragment, true);
 //                NavController navController = Navigation.findNavController(objectiveCardViewHolder.itemView);
 
                 NavHostFragment navHostFragment = (NavHostFragment) activity.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);

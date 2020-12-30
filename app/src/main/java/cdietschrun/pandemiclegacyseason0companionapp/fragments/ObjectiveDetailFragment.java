@@ -1,8 +1,7 @@
-package cdietschrun.pandemiclegacyseason0companionapp;
+package cdietschrun.pandemiclegacyseason0companionapp.fragments;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.util.List;
+
+import cdietschrun.pandemiclegacyseason0companionapp.recyclerviews.ObjectiveCitiesRecyclerViewAdapter;
+import cdietschrun.pandemiclegacyseason0companionapp.recyclerviews.ObjectiveRecyclerViewItemDecoration;
+import cdietschrun.pandemiclegacyseason0companionapp.R;
+import cdietschrun.pandemiclegacyseason0companionapp.models.RegionCities;
 
 public class ObjectiveDetailFragment extends Fragment
 {

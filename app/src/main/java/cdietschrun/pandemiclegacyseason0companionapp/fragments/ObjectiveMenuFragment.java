@@ -1,4 +1,4 @@
-package cdietschrun.pandemiclegacyseason0companionapp;
+package cdietschrun.pandemiclegacyseason0companionapp.fragments;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -16,6 +16,10 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cdietschrun.pandemiclegacyseason0companionapp.recyclerviews.ObjectiveCardRecyclerViewAdapter;
+import cdietschrun.pandemiclegacyseason0companionapp.recyclerviews.ObjectiveRecyclerViewItemDecoration;
+import cdietschrun.pandemiclegacyseason0companionapp.R;
 
 public class ObjectiveMenuFragment extends Fragment
 {

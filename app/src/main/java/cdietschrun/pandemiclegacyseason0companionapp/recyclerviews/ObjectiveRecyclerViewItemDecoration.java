@@ -1,8 +1,9 @@
-package cdietschrun.pandemiclegacyseason0companionapp;
+package cdietschrun.pandemiclegacyseason0companionapp.recyclerviews;
 
 import android.graphics.Rect;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ObjectiveRecyclerViewItemDecoration extends RecyclerView.ItemDecoration {
@@ -15,8 +16,8 @@ public class ObjectiveRecyclerViewItemDecoration extends RecyclerView.ItemDecora
     }
 
     @Override
-    public void getItemOffsets(Rect outRect, View view,
-                               RecyclerView parent, RecyclerView.State state) {
+    public void getItemOffsets(Rect outRect, @NonNull View view,
+                               @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         outRect.left = smallPadding;
         outRect.right = smallPadding;
         outRect.top = largePadding;

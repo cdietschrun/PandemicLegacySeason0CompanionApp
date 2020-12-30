@@ -1,28 +1,28 @@
-package cdietschrun.pandemiclegacyseason0companionapp;
+package cdietschrun.pandemiclegacyseason0companionapp.recyclerviews;
 
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
+
+import cdietschrun.pandemiclegacyseason0companionapp.R;
 
 public class ObjectiveCitiesRecyclerViewAdapter extends RecyclerView.Adapter<ObjectiveCitiesRecyclerViewAdapter.ObjectiveCitiesViewHolder>
 {
     private FragmentActivity activity;
     private List<String> cities;
 
-    ObjectiveCitiesRecyclerViewAdapter(List<String> cities, FragmentActivity activity)
+    public ObjectiveCitiesRecyclerViewAdapter(List<String> cities, FragmentActivity activity)
     {
         this.cities = cities;
         this.activity = activity;
