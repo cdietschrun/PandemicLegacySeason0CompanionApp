@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @RequiresApi(api = Build.VERSION_CODES.R)
-public class RegionCities extends AppCompatActivity
+public class RegionCities
 {
     public static List<String> europeCities = List.of("East Berlin",
                                         "Istanbul",

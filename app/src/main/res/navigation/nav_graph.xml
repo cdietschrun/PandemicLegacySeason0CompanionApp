@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/objectiveMenuFragment">
+
+    <fragment
+        android:id="@+id/objectiveMenuFragment"
+        android:name="cdietschrun.pandemiclegacyseason0companionapp.ObjectiveMenuFragment"
+        android:label="pls0_objective_menu_fragment"
+        tools:layout="@layout/pls0_objective_menu_fragment" >
+        <action
+            android:id="@+id/action_objectiveMenuFragment_to_objectiveDetailFragment"
+            app:destination="@id/objectiveDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/objectiveDetailFragment"
+        android:name="cdietschrun.pandemiclegacyseason0companionapp.ObjectiveDetailFragment"
+        android:label="ObjectiveDetailFragment" />
+</navigation>

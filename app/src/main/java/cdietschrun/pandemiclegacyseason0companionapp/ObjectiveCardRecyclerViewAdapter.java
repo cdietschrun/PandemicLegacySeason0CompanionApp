@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.FragmentActivity;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
@@ -36,7 +37,7 @@ public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<Objec
 
     @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
-    public void onBindViewHolder(@NonNull  ObjectiveCardViewHolder objectiveCardViewHolder, int position)
+    public void onBindViewHolder(@NonNull ObjectiveCardViewHolder objectiveCardViewHolder, int position)
     {
         if (objectives != null && position < objectives.size())
         {
@@ -48,7 +49,11 @@ public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<Objec
             {
                 ObjectiveDetailFragment objectiveDetailFragment = new ObjectiveDetailFragment();
                 objectiveDetailFragment.setRegion(objectiveRegion);
-                ((NavigationHost) activity).navigateTo(objectiveDetailFragment, true);
+//                ((NavigationHost) activity).navigateTo(objectiveDetailFragment, true);
+//                NavController navController = Navigation.findNavController(objectiveCardViewHolder.itemView);
+
+                NavHostFragment navHostFragment = (NavHostFragment) activity.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+                navHostFragment.getNavController().navigate(R.id.objectiveDetailFragment);
             });
         }
     }

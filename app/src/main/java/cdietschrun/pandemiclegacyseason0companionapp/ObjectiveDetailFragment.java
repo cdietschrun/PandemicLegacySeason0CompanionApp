@@ -41,21 +41,8 @@ public class ObjectiveDetailFragment extends Fragment
         MaterialTextView regionNameTextView = newView.findViewById(R.id.objective_detail_region_name);
         regionNameTextView.setText(objectiveRegion);
 
-
-//                personViewHolder.personName.setText(persons.get(i).name);
-//
-//
         List<String> cities = RegionCities.regionToCities.get(objectiveRegion);
 
-//                ArrayAdapter<String> adapter = new ArrayAdapter<String>(objectiveCardViewHolder.cv.getContext(),
-//                        android.R.layout.simple_list_item_1, cities.stream()
-//                                                                   .toArray(String[]::new));
-//
-//                ListView listView = findViewById(R.id.regionCitiesListView);
-//                        listView.setAdapter(adapter);
-//                objectiveCardViewHolder.cardListView.setAdapter(adapter);
-
-        // set up objective cards recyclerview
         RecyclerView recyclerView = newView.findViewById(R.id.objective_cities_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 

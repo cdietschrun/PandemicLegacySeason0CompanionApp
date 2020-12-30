@@ -55,8 +55,10 @@ public class ObjectiveCitiesRecyclerViewAdapter extends RecyclerView.Adapter<Obj
     @Override
     public int getItemCount()
     {
-        return cities.size();
+//        return cities.size();
+        return 3;
     }
+
 
     public static class ObjectiveCitiesViewHolder extends RecyclerView.ViewHolder
     {
