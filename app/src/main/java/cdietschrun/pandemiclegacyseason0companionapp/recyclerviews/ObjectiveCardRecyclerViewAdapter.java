@@ -58,6 +58,7 @@ public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<Objec
                 ObjectiveMenuFragmentDirections.RegionSelectedAction action =
                         ObjectiveMenuFragmentDirections.regionSelectedAction(objectiveRegion);
                 Navigation.findNavController(objectiveCardViewHolder.itemView).navigate(action);
+
 //                regionSelectedAction
 //                Navigation.findNavController(objectiveCardViewHolder.itemView).navigate(R.id.regionSelectedAction);
             });
