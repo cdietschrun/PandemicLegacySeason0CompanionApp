@@ -1,6 +1,7 @@
 package cdietschrun.pandemiclegacyseason0companionapp.recyclerviews;
 
 import android.os.Build;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.FragmentActivity;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,11 +53,10 @@ public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<Objec
             objectiveCardViewHolder.button.setOnClickListener(clickedView ->
             {
                 ObjectiveDetailFragment objectiveDetailFragment = new ObjectiveDetailFragment();
-                objectiveDetailFragment.setRegion(objectiveRegion);
-//                NavController navController = Navigation.findNavController(objectiveCardViewHolder.itemView);
 
-                NavHostFragment navHostFragment = (NavHostFragment) activity.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
-                navHostFragment.getNavController().navigate(R.id.objectiveDetailFragment);
+                Bundle bundle = new Bundle();
+                bundle.putString("objectiveRegionName", objectiveRegion);
+                Navigation.findNavController(objectiveCardViewHolder.itemView).navigate(R.id.action_objectiveMenuFragment_to_objectiveDetailFragment, bundle);
             });
         }
     }

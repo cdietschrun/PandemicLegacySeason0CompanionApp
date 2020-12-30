@@ -2,11 +2,13 @@ package cdietschrun.pandemiclegacyseason0companionapp.fragments;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,29 +25,21 @@ import cdietschrun.pandemiclegacyseason0companionapp.models.RegionCities;
 
 public class ObjectiveDetailFragment extends Fragment
 {
-    private String objectiveRegion;
     private ObjectiveCitiesRecyclerViewAdapter adapter;
-
-//    public ObjectiveDetailFragment(String objectiveRegion)
-//    {
-//        this.objectiveRegion = objectiveRegion;
-//    }
-
-    public void setRegion(String objectiveRegion)
-    {
-        this.objectiveRegion = objectiveRegion;
-    }
 
     @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
+        String objectiveRegionName = getArguments().getString("objectiveRegionName");
+        Log.i("chrislog", objectiveRegionName);
+
         View newView = inflater.inflate(R.layout.pls0_objective_detail_fragment, container, false);
 
         MaterialTextView regionNameTextView = newView.findViewById(R.id.objective_detail_region_name);
-        regionNameTextView.setText(objectiveRegion);
+        regionNameTextView.setText(objectiveRegionName);
 
-        List<String> cities = RegionCities.regionToCities.get(objectiveRegion);
+        List<String> cities = RegionCities.regionToCities.get(objectiveRegionName);
 
         RecyclerView recyclerView = newView.findViewById(R.id.objective_cities_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

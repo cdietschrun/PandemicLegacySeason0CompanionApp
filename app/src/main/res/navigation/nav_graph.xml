@@ -17,5 +17,11 @@
     <fragment
         android:id="@+id/objectiveDetailFragment"
         android:name="cdietschrun.pandemiclegacyseason0companionapp.fragments.ObjectiveDetailFragment"
-        android:label="ObjectiveDetailFragment" />
+        android:label="pls0_objective_detail_fragment"
+        tools:layout="@layout/pls0_objective_detail_fragment" >
+        <argument
+            android:name="objectiveRegionName"
+            app:argType="string" />
+    </fragment>
+
 </navigation>
