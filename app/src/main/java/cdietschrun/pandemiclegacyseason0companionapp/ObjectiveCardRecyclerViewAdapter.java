@@ -46,24 +46,11 @@ public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<Objec
             // setup the linkage for the button to navigate to the details page for an objective
             objectiveCardViewHolder.button.setOnClickListener(clickedView ->
             {
-//                objectiveCardViewHolder.get
-                ((NavigationHost) activity).navigateTo(new ObjectiveDetailFragment(objectiveRegion), true);
+                ObjectiveDetailFragment objectiveDetailFragment = new ObjectiveDetailFragment();
+                objectiveDetailFragment.setRegion(objectiveRegion);
+                ((NavigationHost) activity).navigateTo(objectiveDetailFragment, true);
             });
         }
-        //        personViewHolder.personName.setText(persons.get(i).name);
-
-
-        //        List<String> cities = RegionCities.regionToCities.get(regions.get(index));
-
-        //        Log.i("christag", cities.toString());
-
-        //        ArrayAdapter<String> adapter = new ArrayAdapter<String>(objectiveCardViewHolder.cv.getContext(),
-        //                android.R.layout.simple_list_item_1, cities.stream()
-        //                                                           .toArray(String[]::new));
-
-        //        ListView listView = findViewById(R.id.regionCitiesListView);
-        //                listView.setAdapter(adapter);
-        //        objectiveCardViewHolder.cardListView.setAdapter(adapter);
     }
 
     @Override

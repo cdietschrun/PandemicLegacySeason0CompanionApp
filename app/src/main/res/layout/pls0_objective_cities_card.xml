@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/objective_cities_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="8dp">
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/objective_city_checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    />
+
+
+</com.google.android.material.card.MaterialCardView>
