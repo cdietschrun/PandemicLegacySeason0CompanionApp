@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity
 
 //        setupNavigationMenu(navController);
 
-        setupBottomNavMenu(navController);
+//        setupBottomNavMenu(navController);
     }
 
     private void setupActionBar(NavController navController,
@@ -88,12 +88,12 @@ public class MainActivity extends AppCompatActivity
         return NavigationUI.navigateUp(Navigation.findNavController(this, R.id.nav_host_fragment), appBarConfiguration);
     }
 
-    private void setupBottomNavMenu(NavController navController)
-    {
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_view);
-        if (null != bottomNav)
-        {
-            NavigationUI.setupWithNavController(bottomNav, navController);
-        }
-    }
+//    private void setupBottomNavMenu(NavController navController)
+//    {
+//        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_view);
+//        if (null != bottomNav)
+//        {
+//            NavigationUI.setupWithNavController(bottomNav, navController);
+//        }
+//    }
 }
