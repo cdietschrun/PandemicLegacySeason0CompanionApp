@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
@@ -14,15 +16,18 @@ import java.util.List;
 
 public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<ObjectiveCardRecyclerViewAdapter.ObjectiveCardViewHolder>
 {
+    private FragmentActivity activity;
     private List<String> objectives;
 
-    ObjectiveCardRecyclerViewAdapter(List<String> objectives)
+    ObjectiveCardRecyclerViewAdapter(List<String> objectives, FragmentActivity activity)
     {
         this.objectives = objectives;
+        this.activity = activity;
     }
 
+    @NonNull
     @Override
-    public ObjectiveCardViewHolder onCreateViewHolder(ViewGroup viewGroup, int index)
+    public ObjectiveCardViewHolder onCreateViewHolder(@NonNull  ViewGroup viewGroup, int index)
     {
         View view = LayoutInflater.from(viewGroup.getContext())
                                   .inflate(R.layout.pls0_objective_card, viewGroup, false);
@@ -31,27 +36,34 @@ public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<Objec
 
     @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
-    public void onBindViewHolder(ObjectiveCardViewHolder objectiveCardViewHolder, int position)
+    public void onBindViewHolder(@NonNull  ObjectiveCardViewHolder objectiveCardViewHolder, int position)
     {
         if (objectives != null && position < objectives.size())
         {
             String objectiveRegion = objectives.get(position);
             objectiveCardViewHolder.button.setText(objectiveRegion);
+
+            // setup the linkage for the button to navigate to the details page for an objective
+            objectiveCardViewHolder.button.setOnClickListener(clickedView ->
+            {
+//                objectiveCardViewHolder.get
+                ((NavigationHost) activity).navigateTo(new ObjectiveDetailFragment(objectiveRegion), true);
+            });
         }
         //        personViewHolder.personName.setText(persons.get(i).name);
 
 
-//        List<String> cities = RegionCities.regionToCities.get(regions.get(index));
+        //        List<String> cities = RegionCities.regionToCities.get(regions.get(index));
 
-//        Log.i("christag", cities.toString());
+        //        Log.i("christag", cities.toString());
 
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(objectiveCardViewHolder.cv.getContext(),
-//                android.R.layout.simple_list_item_1, cities.stream()
-//                                                           .toArray(String[]::new));
+        //        ArrayAdapter<String> adapter = new ArrayAdapter<String>(objectiveCardViewHolder.cv.getContext(),
+        //                android.R.layout.simple_list_item_1, cities.stream()
+        //                                                           .toArray(String[]::new));
 
         //        ListView listView = findViewById(R.id.regionCitiesListView);
         //                listView.setAdapter(adapter);
-//        objectiveCardViewHolder.cardListView.setAdapter(adapter);
+        //        objectiveCardViewHolder.cardListView.setAdapter(adapter);
     }
 
     @Override
@@ -67,7 +79,7 @@ public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<Objec
         ObjectiveCardViewHolder(View itemView)
         {
             super(itemView);
-            button = itemView.findViewById(R.id.regionButton);
+            button = itemView.findViewById(R.id.objective_detail_button);
         }
     }
 }

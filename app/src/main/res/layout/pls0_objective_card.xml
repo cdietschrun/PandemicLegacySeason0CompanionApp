@@ -6,16 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_marginStart="16dp"
-    android:layout_marginLeft="16dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginRight="16dp"
     card_view:cardCornerRadius="4dp"
     card_view:cardElevation="8dp">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/regionButton"
+        android:id="@+id/objective_detail_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        />
 
 </com.google.android.material.card.MaterialCardView>

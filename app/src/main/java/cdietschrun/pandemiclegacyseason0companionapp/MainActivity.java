@@ -6,10 +6,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationHost
 {
@@ -23,7 +19,8 @@ public class MainActivity extends AppCompatActivity implements NavigationHost
         {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.container, new ObjectiveFragment())
+                    .setReorderingAllowed(true)
+                    .add(R.id.container, new ObjectiveMenuFragment())
                     .commit();
         }
     }
@@ -33,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost
     {
         FragmentTransaction transaction = getSupportFragmentManager()
                 .beginTransaction()
+                .setReorderingAllowed(true)
                 .replace(R.id.container, fragment);
 
         if (addToBackstack)
