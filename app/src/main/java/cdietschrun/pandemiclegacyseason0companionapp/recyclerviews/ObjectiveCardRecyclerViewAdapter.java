@@ -20,13 +20,14 @@ import java.util.List;
 import cdietschrun.pandemiclegacyseason0companionapp.R;
 import cdietschrun.pandemiclegacyseason0companionapp.fragments.ObjectiveDetailFragment;
 import cdietschrun.pandemiclegacyseason0companionapp.fragments.ObjectiveMenuFragmentDirections;
+import cdietschrun.pandemiclegacyseason0companionapp.models.Objective;
 
 public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<ObjectiveCardRecyclerViewAdapter.ObjectiveCardViewHolder>
 {
     private FragmentActivity activity;
-    private List<String> objectives;
+    private List<Objective> objectives;
 
-    public ObjectiveCardRecyclerViewAdapter(List<String> objectives, FragmentActivity activity)
+    public ObjectiveCardRecyclerViewAdapter(List<Objective> objectives, FragmentActivity activity)
     {
         this.objectives = objectives;
         this.activity = activity;
@@ -47,8 +48,8 @@ public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<Objec
     {
         if (objectives != null && position < objectives.size())
         {
-            String objectiveRegion = objectives.get(position);
-            objectiveCardViewHolder.button.setText(objectiveRegion);
+            Objective objective = objectives.get(position);
+            objectiveCardViewHolder.button.setText(objective.getRegionName());
 
             // setup the linkage for the button to navigate to the details page for an objective
             objectiveCardViewHolder.button.setOnClickListener(clickedView ->
@@ -56,7 +57,7 @@ public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<Objec
 //                ObjectiveDetailFragment objectiveDetailFragment = new ObjectiveDetailFragment();
 
                 ObjectiveMenuFragmentDirections.RegionSelectedAction action =
-                        ObjectiveMenuFragmentDirections.regionSelectedAction(objectiveRegion);
+                        ObjectiveMenuFragmentDirections.regionSelectedAction(objective.getRegionName());
                 Navigation.findNavController(objectiveCardViewHolder.itemView).navigate(action);
 
 //                regionSelectedAction

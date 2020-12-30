@@ -2,6 +2,7 @@ package cdietschrun.pandemiclegacyseason0companionapp.fragments;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,13 +18,14 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 import java.util.List;
 
+import cdietschrun.pandemiclegacyseason0companionapp.models.Objective;
 import cdietschrun.pandemiclegacyseason0companionapp.recyclerviews.ObjectiveCardRecyclerViewAdapter;
 import cdietschrun.pandemiclegacyseason0companionapp.recyclerviews.ObjectiveRecyclerViewItemDecoration;
 import cdietschrun.pandemiclegacyseason0companionapp.R;
 
 public class ObjectiveMenuFragment extends Fragment
 {
-    private List<String> objectives = new ArrayList<>();
+    private List<Objective> objectives = new ArrayList<>();
     private ObjectiveCardRecyclerViewAdapter adapter;
 
     @Override
@@ -55,7 +57,10 @@ public class ObjectiveMenuFragment extends Fragment
                                .setAction("Action", null)
                                .show();
 
-                       objectives.add(regionsArray[position]);
+//                       objectives.add(regionsArray[position]);
+                       final Objective objective = new Objective(regionsArray[position]);
+                       Log.i("christag", objective.getId().toString());
+                       objectives.add(objective);
                        adapter.notifyDataSetChanged();
                    });
 
