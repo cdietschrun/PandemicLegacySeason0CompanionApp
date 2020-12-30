@@ -31,8 +31,7 @@ public class ObjectiveDetailFragment extends Fragment
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        String objectiveRegionName = getArguments().getString("objectiveRegionName");
-        Log.i("chrislog", objectiveRegionName);
+        String objectiveRegionName = ObjectiveDetailFragmentArgs.fromBundle(getArguments()).getObjectiveRegionName();
 
         View newView = inflater.inflate(R.layout.pls0_objective_detail_fragment, container, false);
 

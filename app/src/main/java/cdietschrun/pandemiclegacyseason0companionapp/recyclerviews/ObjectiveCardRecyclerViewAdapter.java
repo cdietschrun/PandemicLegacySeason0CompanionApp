@@ -19,6 +19,7 @@ import java.util.List;
 
 import cdietschrun.pandemiclegacyseason0companionapp.R;
 import cdietschrun.pandemiclegacyseason0companionapp.fragments.ObjectiveDetailFragment;
+import cdietschrun.pandemiclegacyseason0companionapp.fragments.ObjectiveMenuFragmentDirections;
 
 public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<ObjectiveCardRecyclerViewAdapter.ObjectiveCardViewHolder>
 {
@@ -52,11 +53,13 @@ public class ObjectiveCardRecyclerViewAdapter extends RecyclerView.Adapter<Objec
             // setup the linkage for the button to navigate to the details page for an objective
             objectiveCardViewHolder.button.setOnClickListener(clickedView ->
             {
-                ObjectiveDetailFragment objectiveDetailFragment = new ObjectiveDetailFragment();
+//                ObjectiveDetailFragment objectiveDetailFragment = new ObjectiveDetailFragment();
 
-                Bundle bundle = new Bundle();
-                bundle.putString("objectiveRegionName", objectiveRegion);
-                Navigation.findNavController(objectiveCardViewHolder.itemView).navigate(R.id.action_objectiveMenuFragment_to_objectiveDetailFragment, bundle);
+                ObjectiveMenuFragmentDirections.RegionSelectedAction action =
+                        ObjectiveMenuFragmentDirections.regionSelectedAction(objectiveRegion);
+                Navigation.findNavController(objectiveCardViewHolder.itemView).navigate(action);
+//                regionSelectedAction
+//                Navigation.findNavController(objectiveCardViewHolder.itemView).navigate(R.id.regionSelectedAction);
             });
         }
     }

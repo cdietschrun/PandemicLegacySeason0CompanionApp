@@ -11,7 +11,7 @@
         android:label="pls0_objective_menu_fragment"
         tools:layout="@layout/pls0_objective_menu_fragment" >
         <action
-            android:id="@+id/action_objectiveMenuFragment_to_objectiveDetailFragment"
+            android:id="@+id/regionSelectedAction"
             app:destination="@id/objectiveDetailFragment" />
     </fragment>
     <fragment
